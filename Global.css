@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*{  /*Resetando todos os parametros de navegador*/
+    margin: 0;
+    padding: 0;
+    font: inherit;
+
+    /* Tudo que começa com -nome é um prefixo de motor de navegador. 
+    (webkit = safari, chrome... / moz = Mozila FireFox) */
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+    /* Estamos deixando a fonte mais suave */
+}
+
+/* Vamos agora iniciar as variaveis no root.*/
+:root{
+    /* Cores */
+    --bg-color: #09090B;
+    --surface-color: #18181b;
+    --stroke-color: #27272A;
+    --text-color-second: #A1A1AA;
+    --text-color-primary: #F4F4F5;
+    --brand-color-primary: #F7B733;
+    --brand-color-second: #FC4A1A;
+
+    /* Fontes Familly*/
+    --ff-sans: 'Inter', system-ui, sans-serif; /* Se não encontrara as fontes busque a do sistema*/
+
+    /*font weight -> grossura*/
+    --fw-base: 400;
+    --fw-md: 500;
+    --fw-bold: 800;
+
+    /*Font Size -> Tamanho*/
+    --fs-small: 0.875rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.5rem;
+    --fs-2xl:2.5rem;
+}
+
+html{
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-base);
+    font-size: var(--fs-base);
+    line-height: 1.6; /* Espaçamento entre paragrafos */
+    color: var(--text-color-primary);
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+h1, h2, h3{
+    line-height: 1.2;
+    color: var(--texto-color-primary);
+    font-weight: var(--fw-bold);
+    letter-spacing: -0.04em;
+}
+
+h1 {
+    font-size: var(--fs-2xl);
+}
+
+h2 {
+    font-size: var(--fs-xl);
+}
+
+h3{
+    font-size: var(--fs-lg);
+}
+
+a{ /*Vamos tirar os parametros dos links. */
+    text-decoration: none;
+    color: inherit;
+}
+
+ul [role="list"] {  /*Alguns navegadores precisam deste atributo para reconhecer a lista sem o style base */
+    list-style: none;
+}
+
+/* Aqui vou estar pondo um "if" com o @media se a largura é igual ou superior a 80em.
+(No caso em ao contrario de rem pega sempre a font size do root que não muda nunca.)
+- Se a largura for maior que 80em vamos modificar o conteudo das variaveis no root.*/
+
+@media (width >= 80em) {
+    :root {
+        --fs-lg: 2rem;
+        --fs-xl: 3rem;
+        --fs-2xl: 4rem;
+    }
+}
