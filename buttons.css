@@ -1,0 +1,69 @@
+/* Estamos criando uma classe para setar os botões da pagina. */
+
+.btn {
+    --btn-bg-color: var(--text-color);
+    --btn-color: var(--bg-color);
+    border: 0;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content; /* A largura vai se adaptar ao conteudo*/
+
+    border-radius: .5rem;
+
+    font: var(--fw-md) var(--fs-base) var(--ff-sans);
+
+    cursor: pointer; /*Reage ao hoover do mouse.*/
+
+    background: var(--text-color-primary);
+    color: var(--btn-bg-color);
+}
+
+.btn:hover{
+    --btn-bg-color: linear-gradient(90deg, var(--brand-color-secondary) 0%, var(--brand-color-primary) 100%);
+    --btn-color: var(--surface-color)
+}
+
+/* Setando diferentes tamanhos de botões.*/
+.btn-sm {
+    padding: .5rem 1rem;
+    font-size: var(--fs-sm);
+}
+
+.btn-md{
+    padding: .75rem 1.5rem;
+    font-size: var(--fs-base);
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+/* Para realizar o degradé nas letras e na borda do botão segundario, não tem outro jeito que retirar o conteudo do botão diretamenete e colocar ele pela &::after. */
+.btn[area-label] {
+    position: relative;
+
+    /* Setando a Borda com degradé e o fundo transparente.*/
+    &::before{
+        content: "";
+        position: absolute;
+        border-radius: inherit; /* recuperando o set de borda ja feito no botão */
+        inset: 1.5px; /* Deixa o botão todo com a cor setada no bg apenas com uma margem de 1.5*/
+        background-color: var(--bg-color);
+    }
+
+    /* Setando o degradé do texto */
+    &::after{
+        /* Recuperando o texto no atributo */ 
+        content: attr(area-label);
+        background: var(--btn-bg-color);
+        /* Recorta o background na forma do texto */ /* funciona apenas nos navegadores webkit. */
+        -webkit-background-clip: text; 
+        background-clip: text;
+        /* Deixa o texto transparente para pegar a cor do fundo.*/
+        color: transparent;
+    }
+}
