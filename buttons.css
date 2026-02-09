@@ -4,7 +4,7 @@
     --btn-bg-color: var(--text-color-primary);
     --btn-color: var(--bg-color);
     border: 0;
-
+   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,7 @@
 
     border-radius: .5rem;
 
-    font: var(--fw-md) var(--fs-base) var(--ff-sans);
+    font: var(--fw-md) var(--fs-base)/1.5rem var(--ff-sans);
 
     cursor: pointer; /*Reage ao hoover do mouse.*/
 
@@ -56,18 +56,20 @@
         border-radius: inherit; /* recuperando o set de borda ja feito no botão */
         inset: 0.09375rem; /* Deixa o botão todo com a cor setada no bg apenas com uma margem de 1.5*/
         background-color: var(--bg-color);
+        z-index: 0;
     }
 
     /* Setando o degradé do texto */
     &::after{
         /* Recuperando o texto no atributo */ 
         content: attr(aria-label);
-        background: var(--btn-bg-color);
         /* Recorta o background na forma do texto */ /* funciona apenas nos navegadores webkit. */
+        background: var(--btn-bg-color);
         -webkit-background-clip: text; 
         background-clip: text;
         /* Deixa o texto transparente para pegar a cor do fundo.*/
         color: transparent;
+        position: relative;
         z-index: 1;
     }
 }
