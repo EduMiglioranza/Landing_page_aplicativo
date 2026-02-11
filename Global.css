@@ -97,6 +97,12 @@ ul [role="list"] {  /*Alguns navegadores precisam deste atributo para reconhecer
     list-style: none;
 }
 
+img{
+    max-width: 100%;
+    display: inline-block;
+}
+
+
 /* Aqui vou estar pondo um "if" com o @media se a largura é igual ou superior a 80em.
 (No caso em ao contrario de rem pega sempre a font size do root que não muda nunca.)
 - Se a largura for maior que 80em vamos modificar o conteudo das variaveis no root.*/
