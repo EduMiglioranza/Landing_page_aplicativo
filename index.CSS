@@ -6,3 +6,5 @@
 @import url(./hero.css);
 @import url(./sections.css);
 @import url(./about.css);
+@import url(./cards.css);
+@import url(./features.css)(width >= 80em); /*Os estilos do features ja são aplicados apenas para desktop, logo, é desnecesario importalo num celular. Então colocamos uma condição diretamente no import em vez de colocar @media no features.*/
