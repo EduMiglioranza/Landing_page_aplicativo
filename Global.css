@@ -93,7 +93,7 @@ a:hover{
     color: transparent;
 }
 
-ul [role="list"] {  /*Alguns navegadores precisam deste atributo para reconhecer a lista sem o style base */
+ul[role="list"] {  /*Alguns navegadores precisam deste atributo para reconhecer a lista sem o style base */
     list-style: none;
 }
 
