@@ -8,7 +8,7 @@ Programa feito no quadro do curso Full-Stack da Rocketseat. <br/>
 <br>
 
 <p align="center">
-  <img alt="projeto from convite" src=".github/Cover.png" width="100%">
+  <img alt="projeto Landing Page aplicativo" src=".github/Cover.png" width="100%">
   Imagem feita por <a href="/ilanamallak">Ilana Mallak</a>
 </p>
 
